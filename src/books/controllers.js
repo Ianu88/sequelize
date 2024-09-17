@@ -1,9 +1,15 @@
+const Book = require("./model");
 const addbook = async (req,res)=>{
     try{
         // try the thing
-        res.status(201).json({message: "success"});
+        const book = await Book.create({
+            title:req.body.title,
+            author:req.body.author,
+            genre: req.body.genre
+        });
+        res.status(201).json({message: "success",book:book});
     }catch(error) {
-        // iff anerror is found, react as stated
+        // if an error is found, react as stated
         res.status(500).json({message: error.message, error:error})
     }
 };

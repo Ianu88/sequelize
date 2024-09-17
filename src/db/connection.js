@@ -1,3 +1,4 @@
+
 const { Sequelize } = require("sequelize");
 
 Sequelize
@@ -12,6 +13,8 @@ const sequelize = new Sequelize(process.env.MYSQL_URI,{
 });
 
 sequelize.authenticate();
+
+
 
 console.log("DB connection is working");
 

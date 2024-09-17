@@ -1,6 +1,11 @@
 require("dotenv").config();
 const express = require("express");
-const booksRouter = require("./books/routes")
+const booksRouter = require("./books/routes");
+const Book = require("./books/model");
+
+const syncTables = () =>{
+    Book.sync();
+};
 
 const port = process.env.PORT || 5001;
 
@@ -15,5 +20,6 @@ app.get("/health", (req,res) => {
 }); 
 
 app.listen(port, ()=>{
-    console.log(`   server is listening on port ${port}`);
+  syncTables(); 
+   console.log(`   server is listening on port ${port}`);
 });
