@@ -1,5 +1,5 @@
 const Book = require("./model");
-const { get } = require("./routes");
+const {get}  = require("./routes");
 
 const addbook = async (req,res)=>{
     try{
@@ -24,12 +24,18 @@ const getallbooks = async(req,res) =>{
     }
     };
     
-    const updateAuthor = async (req,res)=>{
-     const books=  await Book.update (
-    {author: "Robert Jordan and Brandon Sanderson"})    
-     }
+//     const updateAuthor = async (req,res)=>{
+//      const books=  await Book.update (
+//     {author: "Robert Jordan and Brandon Sanderson"},
+    
+//     {  where: {
+//         author:"Robert Jordan",},
+// },
+// );
+
 module.exports = {
     addbook: addbook,
     getallbooks: getallbooks,
-    updateauthor: updateauthor
-}
+    // updateAuthor: updateAuthor
+};
+
