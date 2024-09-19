@@ -4,7 +4,7 @@ const booksRouter = require("./books/routes");
 const Book = require("./books/model");
 
 const syncTables = () =>{
-    Book.sync();
+    Book.sync({alter:true});
 };
 
 const port = process.env.PORT || 5001;
