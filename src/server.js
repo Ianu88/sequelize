@@ -13,11 +13,11 @@ const syncTables = () =>
     Author.sync({alter: true});
     Book.sync({alter: true});
 
-    Genre.hasMany(Book);
-    Book.belongsTo(Genre);
+    // Genre.hasMany(Book);
+    // Book.belongsTo(Genre);
 
-    Genre.sync({alter: true});
-    Book.sync({alter: true})
+    // Genre.sync({alter: true});
+    // Book.sync({alter: true});
 
     
 const port = process.env.PORT || 5001;
@@ -27,7 +27,7 @@ const app = express();
 app.use(express.json());
 
 app.use(booksRouter);
-
+app.use(authorRouter);
 
 app.get("/health", (req,res) => {
     res.status(200).json({message:"API is healthy"});

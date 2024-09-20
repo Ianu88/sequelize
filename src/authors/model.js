@@ -11,14 +11,4 @@ const Author = sequelize.define("author", {
 
         }
         );
-const Genre = sequelize.define("genre", {
-    
-    name: {
-            type: DataTypes.STRING,
-            allowNull: false
-                        },
-            
-                    }
-                    );
 module.exports = Author;
-module.exports = Genre;
