@@ -1,20 +1,25 @@
-    const addbook = async (req,res)=>{
+const Book = require("../books/model");
+const Author = require("./model")
+    const addAuthor = async (req,res)=>{
     try{
-        // try the thing
-        const book = await Book.create({
-            title:req.body.title,
-            author:req.body.author,
-            genre: req.body.genre
-        });
-        res.status(201).json({message: "success",book:book});
+        const author = await Author.create({
+            name:req.body.name
+            });
+        res.status(201).json({message: "success",author:author});
     }catch(error) {
-        // if an error is found, react as stated
         res.status(500).json({message: error.message, error:error})
     }
 };
 const getAuthorandBooks = async(req,res) => {
-    
+    const author = await Author.findOne({
+    where:{ name: req.params.name,
+        },
+    include: Book
+    });
+    res.status(201).json({message: "success", author: author})
+
 }
 module.exports = {
-    addbook: addbook
+    addAuthor: addAuthor,
+    getAuthorandBooks: getAuthorandBooks,
 };

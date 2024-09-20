@@ -1,6 +1,11 @@
-const { DataTypes } = require("sequelize");
+const {Router} = require("express");
 
-const {addbook}=require("./controllers")
+const authorRouter = Router()
 
-booksRouter.post("/authors/addbook", addbook);
+const {addAuthor,getAuthorandBooks}=require("./controllers");
 
+authorRouter.post("/authors/addauthor", addAuthor);
+
+authorRouter.get("/authors/getauthorandbooks/:name", getAuthorandBooks)
+
+module.exports = authorRouter

@@ -7,8 +7,9 @@ const addbook = async (req,res)=>{
         // try the thing
         const book = await Book.create({
             title:req.body.title,
-            author:req.body.author,
-            genre: req.body.genre
+            authorName:req.body.authorName,
+            genreName: req.body.genreName,
+            authorId:req.body.authorId 
         });
         res.status(201).json({message: "success",book:book});
     }catch(error) {

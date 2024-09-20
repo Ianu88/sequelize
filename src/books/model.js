@@ -8,12 +8,12 @@ const Book = sequelize.define("book", {
             unique: true,
             allowNull: false,
         },
-    author: {
+    authorName: {
             type: DataTypes.STRING,
             defaultvalue:   "written by some author"
             },
 
-    genre: {
+    genreName: {
             type: DataTypes.STRING,
             defaultvalue:   "some genre"
             }},
