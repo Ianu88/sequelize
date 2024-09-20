@@ -12,6 +12,9 @@
         res.status(500).json({message: error.message, error:error})
     }
 };
+const getAuthorandBooks = async(req,res) => {
+    
+}
 module.exports = {
     addbook: addbook
 };
