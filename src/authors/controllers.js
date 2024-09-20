@@ -1,3 +1,5 @@
+const Book = require("./model");
+
     const addbook = async (req,res)=>{
     try{
         // try the thing
@@ -13,7 +15,7 @@
     }
 };
 const getAuthorandBooks = async(req,res) => {
-    
+
 }
 module.exports = {
     addbook: addbook

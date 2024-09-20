@@ -1,6 +1,6 @@
-const { DataTypes } = require("sequelize");
+// const { DataTypes } = require("sequelize");
 
-const {addbook}=require("./controllers")
+// const {addbook}=require("./controllers")
 
-booksRouter.post("/authors/addbook", addbook);
+// booksRouter.post("/authors/addbook", addbook);
 
