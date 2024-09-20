@@ -14,7 +14,10 @@ const getAuthorandBooks = async(req,res) => {
     const author = await Author.findOne({
     where:{ name: req.params.name,
         },
+    include: Book
     });
+    res.status(201).json({message: "success", author: author})
+
 }
 module.exports = {
     addAuthor: addAuthor,

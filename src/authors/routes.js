@@ -6,6 +6,6 @@ const {addAuthor,getAuthorandBooks}=require("./controllers");
 
 authorRouter.post("/authors/addauthor", addAuthor);
 
-authorRouter.get("/authors/getAuthorAndBooks/:name", getAuthorandBooks)
+authorRouter.get("/authors/getauthorandbooks/:name", getAuthorandBooks)
 
 module.exports = authorRouter
